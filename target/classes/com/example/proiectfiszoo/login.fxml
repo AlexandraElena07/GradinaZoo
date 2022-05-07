@@ -16,7 +16,7 @@
          <children>
             <ImageView fx:id="brandingImageView" fitHeight="400.0" fitWidth="249.0" layoutX="-5.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../Desktop/Pictures/ProiectFis/tiger (2).jpg" />
+                  <Image url="@../../../../../../ProiectFis/tiger (2).jpg" />
                </image>
             </ImageView>
          </children>
@@ -32,7 +32,7 @@
             </Label>
             <ImageView fx:id="foxImageView" fitHeight="64.0" fitWidth="76.0" layoutX="107.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../Desktop/Pictures/ProiectFis/fox.png" />
+                  <Image url="@../../../../../../ProiectFis/fox.png" />
                </image>
             </ImageView>
             <Label layoutX="14.0" layoutY="146.0" prefHeight="19.0" prefWidth="111.0" text="Nume de utilizator">
@@ -45,7 +45,7 @@
             <Button fx:id="login" layoutX="14.0" layoutY="284.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="91.0" text="Autentificare" />
             <ImageView fx:id="giraffeImageView" fitHeight="25.0" fitWidth="38.0" layoutX="70.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../Desktop/Pictures/ProiectFis/giraffe.png" />
+                  <Image url="@../../../../../../ProiectFis/giraffe.png" />
                </image>
             </ImageView>
             <Label fx:id="loginMessage" layoutX="21.0" layoutY="337.0" prefHeight="19.0" prefWidth="235.0" textFill="#f76300">
