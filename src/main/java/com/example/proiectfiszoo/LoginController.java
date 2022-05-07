@@ -16,6 +16,9 @@ import java.io.File;
 
 public class LoginController implements Initializable {
     @FXML
+    private Button cancelButton;
+
+    @FXML
     private Label welcomeText;
 
     @FXML
@@ -28,6 +31,8 @@ public class LoginController implements Initializable {
     @FXML
     private ImageView giraffeImageView;
     @FXML
+    private ImageView giraffe2ImageView;
+    @FXML
     private TextField enterUsernameField;
     @FXML
     private PasswordField enterPasswordField;
@@ -37,17 +42,21 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File brandingFile= new File("C:\\Users\\Cristina Stegaru\\IdeaProjects\\demo1\\ProiectFisZoo\\src\\ProiectFis/tiger (2).jpg");
+        File brandingFile= new File("ProiectFis/tiger (2).jpg");
         Image brandingImage = new Image(brandingFile.toURI().toString());
         brandingImageView.setImage(brandingImage);
 
-        File foxFile= new File("C:\\Users\\Cristina Stegaru\\IdeaProjects\\demo1\\ProiectFisZoo\\src\\ProiectFis/fox.png");
+        File foxFile= new File("ProiectFis/fox.png");
         Image foxImage = new Image(foxFile.toURI().toString());
         foxImageView.setImage(foxImage);
 
-        File giraffeFile= new File("C:\\Users\\Cristina Stegaru\\IdeaProjects\\demo1\\ProiectFisZoo\\src\\ProiectFis/giraffe.png");
+        File giraffeFile= new File("ProiectFis/giraffe.png");
         Image giraffeImage = new Image(giraffeFile.toURI().toString());
         giraffeImageView.setImage(giraffeImage);
+
+        File giraffe2File= new File("ProiectFis/giraffe2.png");
+        Image giraffe2Image = new Image(giraffe2File.toURI().toString());
+        giraffe2ImageView.setImage(giraffe2Image);
     }
     public void login(ActionEvent event)
     {
@@ -63,6 +72,10 @@ public class LoginController implements Initializable {
         }
     }
 
+    public void cancelButtonOnAction(ActionEvent event) {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
+    }
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");

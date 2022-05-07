@@ -15,10 +15,11 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 520, 400);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
+        stage.setTitle("Autentificare");
         stage.show();
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }
