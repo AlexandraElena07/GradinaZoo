@@ -11,6 +11,9 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.io.File;
 
@@ -22,7 +25,7 @@ public class LoginController implements Initializable {
     private Label welcomeText;
 
     @FXML
-    private Label loginMessageLabel;
+    private Label loginMessage;
 
     @FXML
     private ImageView brandingImageView;
@@ -63,12 +66,12 @@ public class LoginController implements Initializable {
 
         if(enterUsernameField.getText().isBlank()==false && enterPasswordField.getText().isBlank()==false)
         {
+            loginMessage.setText("Ai incercat sa te autentifici");
             validateLogin();
-            ///loginMessageLabel.setText("Ai incercat sa te autentifici");
         }
         else
         {
-            loginMessageLabel.setText("Te rog introdu numele de utilizator si parola!");
+            loginMessage.setText("Te rog introdu numele de utilizator si parola!");
         }
     }
 
@@ -82,6 +85,28 @@ public class LoginController implements Initializable {
     }
 
     public void validateLogin() {
+         DatabaseConnection connectNow= new DatabaseConnection();
+
+         Connection connectDB= connectNow.getConnection();
+
+         String verifyLogin= "SELECT count(1) FROM user_account WHERE username = '" + enterUsernameField.getText() + "'AND password = '" + enterPasswordField.getText() + "'";
+         try {
+             Statement statement= connectDB.createStatement();
+             ResultSet queryResult = statement.executeQuery(verifyLogin);
+             while(queryResult.next()) {
+                 if(queryResult.getInt(1) == 1) {
+                     loginMessage.setText("Congrats");
+                 } else {
+                     loginMessage.setText("Invalid Login");
+                 }
+             }
+
+
+         } catch(Exception e) {
+             e.printStackTrace();
+             e.getCause();
+         }
+
 
     }
 }

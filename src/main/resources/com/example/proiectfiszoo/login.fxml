@@ -42,7 +42,7 @@
             </Label>
             <TextField fx:id="enterUsernameField" layoutX="14.0" layoutY="165.0" prefHeight="26.0" prefWidth="173.0" promptText="Nume de utilizator" />
             <PasswordField fx:id="enterPasswordField" layoutX="14.0" layoutY="226.0" prefHeight="26.0" prefWidth="173.0" promptText="Parola" />
-            <Button fx:id="login" layoutX="14.0" layoutY="284.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="91.0" text="Autentificare" />
+            <Button fx:id="login" layoutX="14.0" layoutY="284.0" mnemonicParsing="false" onAction="#login" prefHeight="26.0" prefWidth="91.0" text="Autentificare" />
             <ImageView fx:id="giraffeImageView" fitHeight="25.0" fitWidth="38.0" layoutX="70.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../ProiectFis/giraffe.png" />
