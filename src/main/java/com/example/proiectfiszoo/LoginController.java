@@ -85,27 +85,27 @@ public class LoginController implements Initializable {
     }
 
     public void validateLogin() {
-         DatabaseConnection connectNow= new DatabaseConnection();
+        DatabaseConnection connectNow= new DatabaseConnection();
 
-         Connection connectDB= connectNow.getConnection();
+        Connection connectDB= connectNow.getConnection();
 
-         String verifyLogin= "SELECT count(1) FROM user_account WHERE username = '" + enterUsernameField.getText() + "'AND password = '" + enterPasswordField.getText() + "'";
-         try {
-             Statement statement= connectDB.createStatement();
-             ResultSet queryResult = statement.executeQuery(verifyLogin);
-             while(queryResult.next()) {
-                 if(queryResult.getInt(1) == 1) {
-                     loginMessage.setText("Congrats");
-                 } else {
-                     loginMessage.setText("Invalid Login");
-                 }
-             }
+        String verifyLogin= "SELECT count(1) FROM user_account WHERE username = '" + enterUsernameField.getText() + "'AND password = '" + enterPasswordField.getText() + "'";
+        try {
+            Statement statement= connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(verifyLogin);
+            while(queryResult.next()) {
+                if(queryResult.getInt(1) == 1) {
+                    loginMessage.setText("Congrats");
+                } else {
+                    loginMessage.setText("Invalid Login");
+                }
+            }
 
 
-         } catch(Exception e) {
-             e.printStackTrace();
-             e.getCause();
-         }
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
 
 
     }
